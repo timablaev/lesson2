@@ -22,15 +22,15 @@ class StringArray {
 //        return x;
 //    }
 
-          void myArray(int... art) {
+          void myArray(String... art) {
              System.out.println("Количество аргументов: " + art.length);
-             for (int i : art) {
+             for (String i : art) {
                System.out.print(i + " ");
              }
              System.out.println();
           }
 
-          void myArrayNumber(int... arg) {
+          void myArrayNumber(String... arg) {
 
                for (int j = 1; j<=arg.length; j++) {
          System.out.print(j + "й элемент" + ": " + "" + arg[j-1] + "; " );
@@ -39,16 +39,18 @@ class StringArray {
               System.out.println();
           }
 
-          void sortVstavk(int... ending) {
+          void sortVstavk(String... ending) {
               System.out.println(Arrays.toString(ending));
               for (int left = 0; left < ending.length; left++) {
                   // Вытаскиваем значение элемента
-                  int value = ending[left];
+                  String value = ending[left];
                   // Перемещаемся по элементам, которые перед вытащенным элементом
                   int k = left - 1;
                   for (; k >= 0; k--) {
                       // Если вытащили значение меньшее — передвигаем больший элемент дальше
-                      if (value < ending[k]) {
+                      int m = Integer.parseInt(value);
+                      int g = Integer.parseInt(ending[k]);
+                      if (m < g) {
                           ending[k + 1] = ending[k];
                       } else {
                           // Если вытащенный элемент больше — останавливаемся
@@ -59,9 +61,11 @@ class StringArray {
                   ending[k + 1] = value;
               }
               System.out.println(Arrays.toString(ending));
+
+//               Выводим массив в обратном порядке
               int n = ending.length;
               //Переменная, которая будет использоваться при обмене элементов
-              int temp;
+              String temp;
 
               for (int i = 0; i < n / 2; i++) {
                   temp = ending[n - i - 1];
