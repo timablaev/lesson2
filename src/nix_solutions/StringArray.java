@@ -59,6 +59,8 @@ class StringArray {
                   ending[k + 1] = value;
               }
               System.out.println(Arrays.toString(ending));
+
+//               Выводим массив в обратном порядке
               int n = ending.length;
               //Переменная, которая будет использоваться при обмене элементов
               int temp;
